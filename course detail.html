@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .mdl-image--responsive {
+            max-width: 100%!important;
+            max-height: 100%!important;
+            height: auto!important;
+            
+        }
+        .mdl-color--light-blue-600 {
+                background-color: #039be5!important;
+            }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+
+        .mdl-color-text--white {
+            color: #fff!important;
+            }
+        .mdl-button__ripple-container {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+            .mdl-color-text--grey-900 {
+            color: #212121!important;
+        }
+            .mdl-color--amber-500 {
+            background-color: #ffc107!important;
+        }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+        
+        li {
+				float:left;
+			}
+            
+			li a {
+				display: block;
+				color: #555;
+				
+				padding: 14px 16px;
+				text-decoration:none;
+
+
+				}
+
+			li a.active {
+				background-color: #4e6db7;
+				color:white;
+
+				}
+
+			li a:hover:not(.active){
+				background-color: #95b1d8;
+				color:white;
+
+				}
+            body{
+            
+            margin : 10px;
+            padding : 30px;
+            
+        }
+        
+        #r1 {
+         background-color: #039be5!important;
+
+    padding: 15px;
+    color: #fff;
+}
+            .submit{
+                margin-bottom: 30px;
+                width: 80px;
+                height: 30px;
+                border: none;
+                border-radius: 2px;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight:500;
+                transition: 0.2s ease;
+                cursor: pointer;
+                align-self: center;
+                background: #0f73e6;
+                margin-left: 200px;
+                
+            }
+        .sub{
+            width: 80px;
+                height: 30px;
+                border: none;
+                border-radius: 2px;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight:500;
+                transition: 0.2s ease;
+                cursor: pointer;
+                background: #4e6db7;
+            
+        }
+        .c1{
+            float: left;
+            width: 32%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .h-img,object{
+            max-width: 98%;
+            max-height: 50%;
+        }
+        
+        
+        
+        /*Rating*/
+        .rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    width:1em;
+    padding:0 .1em;
+	color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+    
+    
+    
+    /*demo */
+    .rating1,.rating2,.rating3,.rating4,.rating5,.rating6,.rating7,.rating8 {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating1:not(:checked) > input,.rating2:not(:checked) > input,.rating3:not(:checked) > input,.rating4:not(:checked) > input,.rating5:not(:checked) > input,.rating6:not(:checked) > input,.rating7:not(:checked) > input,.rating8:not(:checked) > input {
+    position:absolute;
+    
+    clip:rect(0,0,0,0);
+}
+
+.rating1:not(:checked) > label,.rating2:not(:checked) > label,.rating3:not(:checked) > label,.rating4:not(:checked) > label,.rating5:not(:checked) > label,.rating6:not(:checked) > label,.rating7:not(:checked) > label,.rating8:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    width:1em;
+    padding:0 .1em;
+	color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:before,.rating2:not(:checked) > label:before,.rating3:not(:checked) > label:before,.rating4:not(:checked) > label:before,.rating5:not(:checked) > label:before,.rating6:not(:checked) > label:before,.rating7:not(:checked) > label:before,.rating8:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating1 > input:checked ~ label,.rating2 > input:checked ~ label,.rating3 > input:checked ~ label,.rating4 > input:checked ~ label,.rating5 > input:checked ~ label,.rating6 > input:checked ~ label,.rating7 > input:checked ~ label,.rating8 > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:hover,
+.rating1:not(:checked) > label:hover ~ label,
+    .rating2:not(:checked) > label:hover,
+.rating2:not(:checked) > label:hover ~ label,
+    .rating3:not(:checked) > label:hover,
+.rating3:not(:checked) > label:hover ~ label,
+    .rating4:not(:checked) > label:hover,
+.rating4:not(:checked) > label:hover ~ label,
+    .rating5:not(:checked) > label:hover,
+.rating5:not(:checked) > label:hover ~ label,
+    .rating6:not(:checked) > label:hover,
+.rating6:not(:checked) > label:hover ~ label,
+    .rating7:not(:checked) > label:hover,
+.rating7:not(:checked) > label:hover ~ label,
+    .rating8:not(:checked) > label:hover,
+.rating8:not(:checked) > label:hover ~ label{
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > input:checked + label:hover,
+.rating1 > input:checked + label:hover ~ label,
+.rating1 > input:checked ~ label:hover,
+.rating1 > input:checked ~ label:hover ~ label,
+.rating1 > label:hover ~ input:checked ~ label,
+    
+    .rating2 > input:checked + label:hover,
+.rating2 > input:checked + label:hover ~ label,
+.rating2 > input:checked ~ label:hover,
+.rating2 > input:checked ~ label:hover ~ label,
+.rating2 > label:hover ~ input:checked ~ label,
+    
+    .rating3 > input:checked + label:hover,
+.rating3 > input:checked + label:hover ~ label,
+.rating3 > input:checked ~ label:hover,
+.rating3 > input:checked ~ label:hover ~ label,
+.rating3 > label:hover ~ input:checked ~ label,
+    
+    .rating4 > input:checked + label:hover,
+.rating4 > input:checked + label:hover ~ label,
+.rating4 > input:checked ~ label:hover,
+.rating4 > input:checked ~ label:hover ~ label,
+.rating4 > label:hover ~ input:checked ~ label,
+    
+    .rating5 > input:checked + label:hover,
+.rating5 > input:checked + label:hover ~ label,
+.rating5 > input:checked ~ label:hover,
+.rating5 > input:checked ~ label:hover ~ label,
+.rating5 > label:hover ~ input:checked ~ label,
+    
+    .rating6 > input:checked + label:hover,
+.rating6 > input:checked + label:hover ~ label,
+.rating6 > input:checked ~ label:hover,
+.rating6 > input:checked ~ label:hover ~ label,
+.rating6 > label:hover ~ input:checked ~ label,
+    
+    .rating7 > input:checked + label:hover,
+.rating7 > input:checked + label:hover ~ label,
+.rating7 > input:checked ~ label:hover,
+.rating7 > input:checked ~ label:hover ~ label,
+.rating7 > label:hover ~ input:checked ~ label,
+    
+    .rating8 > input:checked + label:hover,
+.rating8 > input:checked + label:hover ~ label,
+.rating8 > input:checked ~ label:hover,
+.rating8 > input:checked ~ label:hover ~ label,
+.rating8 > label:hover ~ input:checked ~ label{
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > label:active,.rating2 > label:active,.rating3 > label:active,.rating4 > label:active,.rating5 > label:active,.rating6 > label:active,.rating7 > label:active,.rating8 > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+    .main {
+   
+  border: 5px solid red;
+  padding: 30px;
+  margin: 10px;
+
+       
+        
+}
+        
+        
+        
+        
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+<body>
+        
+            <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top" >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html"><img src="img/logo.png" width="160px" height="110px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                
+                
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="" href="home.html" style="font-size: 16px;"><h5>Home </h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>Link</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>About us</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>Contact us</h5></a>
+                    </li>
+
+                    <li>
+                        <a href="login.html"  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--light-blue-600 mdl-color-text--white" data-upgraded=",MaterialButton,MaterialRipple">LOGIN<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(760px, 14px);"></span></span></a>
+                        <a href="signup.html"  style="margin-left: 10px" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--amber-500 mdl-color-text--grey-900" data-upgraded=",MaterialButton,MaterialRipple">SIGN UP<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(77px, 14px);"></span></span></a>
+
+                    </li>
+                
+                
+                
+                    </ul>
+                </div>
+        
+        
+        
+        
+        
+            </div>
+        </nav>
+        
+    <div class="header">
+        <center><img src="electrical-electronics-engineering-min.jpg" class="h-img" width="1400px" height="450px"></center>
+        <h1><br/>&nbsp; &nbsp;Bachelor of Technology [B.Tech] (Electrical Engineering)</h1>
+        <p style="font-size: 20px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stream : ENGINEERING<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Duration : 4 YEARS <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Course
+ELECTRICAL<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Course Type : 
+GRADUATION &nbsp;              </p>
+        
+    </div>
+    <div class='main'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.Tech. Electrical Engineering is a 4 years degree course. The eligibility of admission in this course is 10+2 pass or equivalent from a recognized board or university. Electrical engineering is one of the most sought-after branches of engineering. Admission to this course is done through either entrance exams conducted at national and state level or on merit based on the qualifying exam.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Top Institutes offering this course are:<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IIT, Guwahati<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIT, Thiruchirapalli<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Neotia University<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chandigarh University<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NIT, Warangal<br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Average fees for this course in most of the engineering colleges in India vary from INR 4 to 10 Lacs<br>
+
+Electrical Engineers have job opportunities in both private and public sectors. Shell, TATA technologies, DRDO, Dr. Reddy’s Laboratories, HCL technologies, Google, Microsoft, Power grid corporation of India Ltd, Samsung, Sony Corporation etc. are some of the most renowned recruiters of this field. Average salary package offered to Electrical Engineers is 3.5 to 6 LPA in most of the top recruiting companies.<br>
+
+Electrical engineering is the study and application of electricity, electronics a, d electromagnetism for the development and maintenance of electrical and electronics equipment. Electrical Engineering course study includes Circuit analysis, machines and drive system, Power System, Control system, Power electronics, Utilization etc. The main focus of the course will be on industrial requirement of ‘Electrical engineering’.<br>
+
+       </div>
+    <div>
+        <h4>B.Tech. Electrical Engineering: What is it About?</h4>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The scope for students of B. Tech Electrical Engineering is very high. There are two options available for them either they can join higher education after this course or they can join their professional career as per skills. At present, electrical engineers have great demand in the market.<br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An objective of this course is to ensure the success of the students for a long time. Students can develop their electrical skills and abilities with the study of this course. They also can improve abilities of professional attitude, effective communication skills as well. </div>
+    
+    <div>
+        <h4>B.Tech. Electrical Engineering: Top Institutes</h4>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Most of the engineering institutes in India offer Electrical Engineering course. Following are some of the best public and private colleges/universities for Electrical engineering-
+        <table class="table table-striped">
+            <tr>
+            <th>Name of the Institute</th>
+            <th>Location</th>
+            <th>Average Fee (in INR)</th>
+            </tr>
+            <tr>
+                <td>Indian Institute of Technology, Roorkee (IITR)</td>
+                <td>Roorkee</td>
+                <td>1,57,030</td>
+            </tr>
+            <tr>
+                <td>Indian Institute of Technology, Bombay (IITB)</td>
+                <td>Mumbai</td>
+                <td>48,876</td>
+            </tr>
+               <tr>
+                <td>Indian Institute of Technology, Delhi (IITD)</td>
+                <td>New Delhi</td>
+                <td>82,300</td>
+            </tr>
+               <tr>
+                <td>Indian Institute of Technology, Kanpur (IITK)</td>
+                <td>Kanpur</td>
+                <td>2,06,247</td>
+            </tr>
+               <tr>
+                <td>National Institute of Technology, Rourkela (NIT-RKL)</td>
+                <td>Rourkela</td>
+                <td>92,750</td>
+            </tr>
+               <tr>
+                <td>Motilal Nehru National Institute of Technology (MNNIT)</td>
+                <td>Allahabad</td>
+                <td>80,000</td>
+            </tr>
+               <tr>
+                <td>Malaviya National Institute of Technology, MNIT</td>
+                <td>Jaipur</td>
+                <td>79,243</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h4>B.Tech. Electrical Engineering: Eligibility</h4>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pass in 10+2 or equivalent with Physics, Mathematics and English as compulsory subjects with a minimum of 50% marks from a recognized board/ university. Students are expected to clear entrance exam like IIT, AIEEE, AMU, UPSEE, BITSAT etc. 
+    </div>
+    <div>
+        <h4>B.Tech. Electrical Engineering: Admission Process</h4>
+      <img src="course pattern.jpg" class="h-img" width="400px" height="200px"><br>
+        
+
+    
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To get admission in engineering colleges, first of all student should be 10+2 with physics, chemistry and mathematics. After that the student can attempt entrance exam or they can get direct admission also.
+<br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After clearing the entrance exam, counselling will be done and the eligible candidate will be selected. And, if the student is getting direct admission then selection will be done on the basis of merit list or management quota.
+<br>
+        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Following is the criteria for admission through different modes-
+        <br>
+
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Direct Admission-</b> Engineering institutes which offer direct admission have certain criteria for admission. Either they offer admission on the basis of merit in qualifying exam i.e. 10+2 or equivalent or there are some management seats reserved in private engineering colleges. For management quota the fee structure is generally higher than others.
+<br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Direct Admission for Diploma holders-</b> Various engineering colleges in India also offer direct admission to ITI diploma holders in second year of the course.
+<br>
+        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Entrance Exams-</b> There are several entrance exams in India at national and state level. Some private institutes like SRM University, BITS Pilani, VIT University etc conduct their separate entrance test.
+        <br><b> Some main national level and state level engineering entrance tests are below-</b>
+        <br>
+         <table class="table table-striped">
+            <tr>
+            <th>Exam Name</th>
+            <th>Level/Conducted by</th>
+            <th>College</th>
+            </tr>
+            <tr>
+                 <td>JEE Main</td>
+                <td>National level/ CBSE</td>
+                <td>NITs, IIITs, Most of the institutes accept JEE Main Score</td>
+            </tr>
+             <tr>
+               <td>JEE Advanced</td>
+                <td>National/IITs</td>
+                <td>IITs</td>
+            </tr>
+             <tr>
+          <td>BITSAT</td>
+                <td>National/BITS Pilani</td>
+                <td>BITS Pilani all campuses</td>
+            </tr>
+             <tr>
+                <td>SRMJEEE</td>
+                <td>National/SRM University</td>
+                <td>SRM University all campuses</td>
+            </tr>
+               <tr>
+                <td>COMEDK</td>
+                <td>State</td>
+                <td>All engineering colleges of Karnataka</td>
+            </tr>
+    
+        </table>
+                
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br><br>
+    <div class="container-fluid" id="r1">
+            <div class="r2">
+                <h3 style="text-align: center;"><i class="fa fa-facebook" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-twitter" aria-hidden="true" style="color: #fff">        </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-instagram" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-google-plus" aria-hidden="true" style="color: #fff"></i>
+                    </h3><br>
+             
+             
+        
+            </div>
+        
+         <div class="row" >
+             
+             
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="region region-panel-second-1">
+        <div id="block-contactinfo" class="block block-block-content block-block-contente29440d8-09bd-4afe-8080-1f9cc71afa89">
+        <h3 style="text-align: center;">Contact Info</h3><br>
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item" style="text-align: center;"><h5>Email ID</h5><h6>
+        &nbsp;mandarkumbhar65@gmail.com<br>
+        &nbsp;rutviklat@gmail.com<br>
+        &nbsp;tgkhanted@gmail.com<br></h6>
+                <h5>Mobile No</h5><h6>
+        &nbsp;9930641900/
+        9967293194/
+        9167124511<br></h6><br>
+    
+        </div>
+        </div>
+        </div>
+         </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Links</h3><br>
+            <div style="text-align: center;">
+                <h5>College review</h5>
+                <h5>Top University</h5>
+                <h5>Top Engineering colleges</h5>
+                <h5>Top MBA colleges</h5>
+                
+                <h5>Help</h5><br>
+            
+            
+            
+            </div>
+            
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Contact us</h3><br>
+            <div class="form-box" style="text-align: center;">
+                <p>Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" style="height: 25px; width: 200px;"></p>
+                <p>Email ID : &nbsp;&nbsp;&nbsp;<input type="text" name="email" style="height: 25px; width: 200px;"></p>
+                <div class="row" style="text-align: center; align-content: center; margin-left: 100px;">
+                <p>Comment :&nbsp;</p>
+                
+                <p><textarea name="message" rows="3" cols="25"> 
+                    </textarea></p>
+                </div>    
+                
+                <button class="submit" ><bold>Send</bold></button>
+            
+            
+            </div>
+        </div>
+        
+        </div>
+            <div class="copyright" style="text-align: center;">
+            
+                <h6>&#169;2019College360.All Rights Reserved</h6>
+            
+            </div>
+            
+            
+        </div>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

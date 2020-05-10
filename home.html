@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .mdl-image--responsive {
+            max-width: 100%!important;
+            max-height: 100%!important;
+            height: auto!important;
+            
+        }
+        .mdl-color--light-blue-600 {
+                background-color: #039be5!important;
+            }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+
+        .mdl-color-text--white {
+            color: #fff!important;
+            }
+        .mdl-button__ripple-container {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+            .mdl-color-text--grey-900 {
+            color: #212121!important;
+        }
+            .mdl-color--amber-500 {
+            background-color: #ffc107!important;
+        }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+        
+        li {
+				float:left;
+			}
+            
+			li a {
+				display: block;
+				color: #555;
+				
+				padding: 14px 16px;
+				text-decoration:none;
+
+
+				}
+
+			li a.active {
+				background-color: #4e6db7;
+				color:white;
+
+				}
+
+			li a:hover:not(.active){
+				background-color: #95b1d8;
+				color:white;
+
+				}
+            body{
+            
+            margin: 0;
+            padding: 0;
+            
+        }
+        .header
+        {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(img/bg1.jpg);
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            
+            
+        }
+        h1
+        {
+            color: #fff;
+            margin-bottom: 70px;
+            font-size: 45px;
+            letter-spacing: 2px;
+            text-align:center;
+            
+        }
+        .search-field
+        {
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            font-size: 20px;
+            max-height: 100%; 
+            max-width: 90%;
+        }
+        .business
+        {
+            width: 600px;
+        }
+        .search-btn
+        {
+            height: 50px;
+            width: 150px;
+            background: #ffeb3b;
+            border: none;
+            color: #000;
+            border-radius: 25px;
+            font-size: 20px;
+        }
+        .search-btn:hover{
+            background: #ffc107;
+            cursor: pointer;
+        }
+        .form-box
+        {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+        }
+        #r1 {
+         background-color: #039be5!important;
+
+    padding: 15px;
+    color: #fff;
+}
+            .submit{
+                margin-bottom: 30px;
+                width: 80px;
+                height: 30px;
+                border: none;
+                border-radius: 2px;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight:500;
+                transition: 0.2s ease;
+                cursor: pointer;
+                align-self: center;
+                background: #0f73e6;
+                margin-left: 200px;
+                
+            }
+        @media screen and (max-width:900px){
+            .search-field{
+                max-height: 100%; 
+            max-width: 70%;
+            }
+        }
+        @media screen and (max-width:600px){
+            .header{
+                height: 80vh;
+            }
+            .search-field
+        {
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            font-size: 20px;
+            max-height: 100%; 
+            max-width: 98%;
+        }
+        .business
+        {
+            width: 370px;
+        }
+        .search-btn
+        {
+            height: 50px;
+            width: 150px;
+            background: #ffeb3b;
+            border: none;
+            color: #000;
+            border-radius: 25px;
+            font-size: 20px;
+            position:relative;
+    top:50%; 
+    left:30%;
+            
+        }
+            
+        }
+        h2{
+            text-align: center;
+        }
+    
+        
+    </style>
+
+    <title>Home</title>
+</head>
+<body>
+        
+            <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="img/logo.png" width="160px" height="110px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                
+                
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                        <a class=" active" href="#" style="font-size: 16px;">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;">Contact us</a>
+                    </li>
+
+                    <li>
+                        <a href="login.html"  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--light-blue-600 mdl-color-text--white" data-upgraded=",MaterialButton,MaterialRipple">LOGIN<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(760px, 14px);"></span></span></a>
+                        <a href="signup.html"  style="margin-left: 10px" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--amber-500 mdl-color-text--grey-900" data-upgraded=",MaterialButton,MaterialRipple">SIGN UP<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(77px, 14px);"></span></span></a>
+
+                    </li>
+                
+                
+                
+                    </ul>
+                </div>
+        
+        
+        
+        
+        
+            </div>
+        </nav>
+        
+    <div class="header">
+        <form style="max-height: 100%; max-width: 90%;">
+            <h1>Search your College</h1>
+            <div class="form-box">
+                <input type="text" class="search-field business" placeholder="Search Colleges....."  >
+                <button class="search-btn" type="button" >Search</button>
+            </div>
+        
+        
+        </form>
+    </div> 
+    
+    <h2><br/>&nbsp;Top Engineering Colleges in India</h2>
+    <div class="container">
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"><< Prev</i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                    <i class="fas fa-chevron-right">&nbsp;next >> </i>
+                </a>
+            </div>
+            <!--/.Controls-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/IIT-MAdras1.jpg"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Madras - Indian Institute of Technology Chennai (IITM)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1959<br/>Autonomous Institute <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Chennai<br/> Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a href="iit-madras.html" class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/IIT-Delhi.webp"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Delhi - Indian Institute of Technology (IITD)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1961<br/>Deemed University  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Delhi<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/iitbombay1.jpg"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Bombay - Indian Institute of Technology (IITB)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1958<br/>Deemed University  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Powai, Mumbai<br/> Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.First slide-->
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/IIT-Kharagpur.jpg" alt="Card image cap" width="100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Kharagpur - Indian Institute of Technology (IITKGP)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1951<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Kharagpur<br/> Rating : 4.5 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/iit-kanpur.jpg" alt="Card image cap" width="100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Kanpur - Indian Institute of Technology (IITK)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1959<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Kanpur<br/> Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/iit-Roorkee.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Roorkee - Indian Institute of Technology (IITR)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1847<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Roorkee<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+                <!--Third slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/iit-Guwahati.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Guwahati - Indian Institute of Technology (IITG)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1994<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Guwahati<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/iit-Hyderabad.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Hyderabad - Indian Institute of Technology (IITH)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 2008<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Hyderabad<br/> Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="img/ceg.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">CEG - College of Engineering Guindy, Anna University</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1794<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Guindy, Chennai<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Third slide-->
+
+            </div>
+            <!--/.Slides-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+
+    
+    <h2><br/>&nbsp;Top Medical Colleges in India</h2>
+    <div class="container">
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"><< Prev</i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                    <i class="fas fa-chevron-right">&nbsp;next >> </i>
+                </a>
+            </div>
+            <!--/.Controls-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="IIT-MAdras1.jpg"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Madras - Indian Institute of Technology Chennai (IITM)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1959<br/>Autonomous Institute <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Chennai<br/> Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="IIT-Delhi.webp"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Delhi - Indian Institute of Technology (IITD)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1961<br/>Deemed University  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Delhi<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="iitbombay1.jpg"
+                                     alt="Card image cap" width="250px">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Bombay - Indian Institute of Technology (IITB)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1958<br/>Deemed University  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Powai, Mumbai<br/> Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.First slide-->
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="IIT-Kharagpur.jpg" alt="Card image cap" width="100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Kharagpur - Indian Institute of Technology (IITKGP)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1951<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Kharagpur<br/> Rating : 4.5 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="iit-kanpur.jpg" alt="Card image cap" width="100%">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Kanpur - Indian Institute of Technology (IITK)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1959<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Kanpur<br/> Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="iit-Roorkee.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Roorkee - Indian Institute of Technology (IITR)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1847<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Roorkee<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+                <!--Third slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="iit-Guwahati.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Guwahati - Indian Institute of Technology (IITG)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1994<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Guwahati<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="iit-Hyderabad.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">IIT Hyderabad - Indian Institute of Technology (IITH)</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 2008<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Hyderabad<br/> Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <img class="card-img-top"
+                                     src="ceg.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">CEG - College of Engineering Guindy, Anna University</h4>
+                                    <p class="card-text">
+                                        Public/Government | Established 1794<br/>Autonomous Institute  <br/>
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Guindy, Chennai<br/> Rating : 4.4 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i>
+                                    </p>
+                                    <a class="btn btn-primary">View college</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Third slide-->
+
+            </div>
+            <!--/.Slides-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+
+    
+    <div class="container-fluid" id="r1">
+            <div class="r2">
+                <h3 style="text-align: center;"><i class="fa fa-facebook" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-twitter" aria-hidden="true" style="color: #fff">        </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-instagram" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-google-plus" aria-hidden="true" style="color: #fff"></i>
+                    </h3><br>
+             
+             
+        
+            </div>
+        
+         <div class="row" >
+             
+             
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="region region-panel-second-1">
+        <div id="block-contactinfo" class="block block-block-content block-block-contente29440d8-09bd-4afe-8080-1f9cc71afa89">
+        <h3 style="text-align: center;">Contact Info</h3><br>
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item" style="text-align: center;"><h5>Email ID</h5><h6>
+        &nbsp;mandarkumbhar65@gmail.com<br>
+        &nbsp;rutviklat@gmail.com<br>
+        &nbsp;tgkhanted@gmail.com<br></h6>
+                <h5>Mobile No</h5><h6>
+        &nbsp;9930641900/
+        9967293194/
+        9167124511<br></h6><br>
+    
+        </div>
+        </div>
+        </div>
+         </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Links</h3><br>
+            <div style="text-align: center;">
+                <h5>College review</h5>
+                <h5>Top University</h5>
+                <h5>Top Engineering colleges</h5>
+                <h5>Top MBA colleges</h5>
+                
+                <h5>Help</h5><br>
+            
+            
+            
+            </div>
+            
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Contact us</h3><br>
+            <div class="f1" style="text-align: center;">
+                <p>Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" style="height: 25px; width: 200px;"></p>
+                <p>Email ID : &nbsp;&nbsp;&nbsp;<input type="text" name="email" style="height: 25px; width: 200px;"></p>
+                <div class="row" style="text-align: center; align-content: center; margin-left: 100px;">
+                <p>Comment :&nbsp;</p>
+                
+                <p><textarea name="message" rows="3" cols="25"> 
+                    </textarea></p>
+                </div>    
+                
+                <button class="submit" ><bold>Send</bold></button>
+            
+            
+            </div>
+        </div>
+        
+        </div>
+            <div class="copyright" style="text-align: center;">
+            
+                <h6>&#169;2019College360.All Rights Reserved</h6>
+            
+            </div>
+            
+            
+        </div>
+   
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

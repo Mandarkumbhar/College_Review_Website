@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .mdl-image--responsive {
+            max-width: 100%!important;
+            max-height: 100%!important;
+            height: auto!important;
+            
+        }
+        .mdl-color--light-blue-600 {
+                background-color: #039be5!important;
+            }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+
+        .mdl-color-text--white {
+            color: #fff!important;
+            }
+        .mdl-button__ripple-container {
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+            .mdl-color-text--grey-900 {
+            color: #212121!important;
+        }
+            .mdl-color--amber-500 {
+            background-color: #ffc107!important;
+        }
+        .mdl-button {
+            background: 0 0;
+            border: none;
+            border-radius: 2px;
+            color: #000;
+            position: relative;
+            height: 36px;
+            margin: 6px 4px;
+            min-width: 64px;
+            padding: 0 16px;
+            display: inline-block;
+            font-family: "Open Sans",Helvetica,Arial,sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: 36px;
+            vertical-align: middle;
+        }
+        
+        li {
+				float:left;
+			}
+            
+			li a {
+				display: block;
+				color: #555;
+				
+				padding: 14px 16px;
+				text-decoration:none;
+
+
+				}
+
+			li a.active {
+				background-color: #4e6db7;
+				color:white;
+
+				}
+
+			li a:hover:not(.active){
+				background-color: #95b1d8;
+				color:white;
+
+				}
+            body{
+            
+            margin: 0;
+            padding:0;
+            
+        }
+        
+        #r1 {
+         background-color: #039be5!important;
+
+    padding: 15px;
+    color: #fff;
+}
+            .submit{
+                margin-bottom: 30px;
+                width: 80px;
+                height: 30px;
+                border: none;
+                border-radius: 2px;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight:500;
+                transition: 0.2s ease;
+                cursor: pointer;
+                align-self: center;
+                background: #0f73e6;
+                margin-left: 200px;
+                
+            }
+        .sub{
+            width: 80px;
+                height: 30px;
+                border: none;
+                border-radius: 2px;
+                color: #fff;
+                font-family: sans-serif;
+                font-weight:500;
+                transition: 0.2s ease;
+                cursor: pointer;
+                background: #4e6db7;
+            
+        }
+        .c1{
+            float: left;
+            width: 32%;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .h-img,object{
+            max-width: 98%;
+            max-height: 50%;
+        }
+        
+        
+        
+        /*Rating*/
+        .rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    width:1em;
+    padding:0 .1em;
+	color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+    
+    
+    
+    /*demo */
+    .rating1,.rating2,.rating3,.rating4,.rating5,.rating6,.rating7,.rating8 {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating1:not(:checked) > input,.rating2:not(:checked) > input,.rating3:not(:checked) > input,.rating4:not(:checked) > input,.rating5:not(:checked) > input,.rating6:not(:checked) > input,.rating7:not(:checked) > input,.rating8:not(:checked) > input {
+    position:absolute;
+    
+    clip:rect(0,0,0,0);
+}
+
+.rating1:not(:checked) > label,.rating2:not(:checked) > label,.rating3:not(:checked) > label,.rating4:not(:checked) > label,.rating5:not(:checked) > label,.rating6:not(:checked) > label,.rating7:not(:checked) > label,.rating8:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    width:1em;
+    padding:0 .1em;
+	color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:before,.rating2:not(:checked) > label:before,.rating3:not(:checked) > label:before,.rating4:not(:checked) > label:before,.rating5:not(:checked) > label:before,.rating6:not(:checked) > label:before,.rating7:not(:checked) > label:before,.rating8:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating1 > input:checked ~ label,.rating2 > input:checked ~ label,.rating3 > input:checked ~ label,.rating4 > input:checked ~ label,.rating5 > input:checked ~ label,.rating6 > input:checked ~ label,.rating7 > input:checked ~ label,.rating8 > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1:not(:checked) > label:hover,
+.rating1:not(:checked) > label:hover ~ label,
+    .rating2:not(:checked) > label:hover,
+.rating2:not(:checked) > label:hover ~ label,
+    .rating3:not(:checked) > label:hover,
+.rating3:not(:checked) > label:hover ~ label,
+    .rating4:not(:checked) > label:hover,
+.rating4:not(:checked) > label:hover ~ label,
+    .rating5:not(:checked) > label:hover,
+.rating5:not(:checked) > label:hover ~ label,
+    .rating6:not(:checked) > label:hover,
+.rating6:not(:checked) > label:hover ~ label,
+    .rating7:not(:checked) > label:hover,
+.rating7:not(:checked) > label:hover ~ label,
+    .rating8:not(:checked) > label:hover,
+.rating8:not(:checked) > label:hover ~ label{
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > input:checked + label:hover,
+.rating1 > input:checked + label:hover ~ label,
+.rating1 > input:checked ~ label:hover,
+.rating1 > input:checked ~ label:hover ~ label,
+.rating1 > label:hover ~ input:checked ~ label,
+    
+    .rating2 > input:checked + label:hover,
+.rating2 > input:checked + label:hover ~ label,
+.rating2 > input:checked ~ label:hover,
+.rating2 > input:checked ~ label:hover ~ label,
+.rating2 > label:hover ~ input:checked ~ label,
+    
+    .rating3 > input:checked + label:hover,
+.rating3 > input:checked + label:hover ~ label,
+.rating3 > input:checked ~ label:hover,
+.rating3 > input:checked ~ label:hover ~ label,
+.rating3 > label:hover ~ input:checked ~ label,
+    
+    .rating4 > input:checked + label:hover,
+.rating4 > input:checked + label:hover ~ label,
+.rating4 > input:checked ~ label:hover,
+.rating4 > input:checked ~ label:hover ~ label,
+.rating4 > label:hover ~ input:checked ~ label,
+    
+    .rating5 > input:checked + label:hover,
+.rating5 > input:checked + label:hover ~ label,
+.rating5 > input:checked ~ label:hover,
+.rating5 > input:checked ~ label:hover ~ label,
+.rating5 > label:hover ~ input:checked ~ label,
+    
+    .rating6 > input:checked + label:hover,
+.rating6 > input:checked + label:hover ~ label,
+.rating6 > input:checked ~ label:hover,
+.rating6 > input:checked ~ label:hover ~ label,
+.rating6 > label:hover ~ input:checked ~ label,
+    
+    .rating7 > input:checked + label:hover,
+.rating7 > input:checked + label:hover ~ label,
+.rating7 > input:checked ~ label:hover,
+.rating7 > input:checked ~ label:hover ~ label,
+.rating7 > label:hover ~ input:checked ~ label,
+    
+    .rating8 > input:checked + label:hover,
+.rating8 > input:checked + label:hover ~ label,
+.rating8 > input:checked ~ label:hover,
+.rating8 > input:checked ~ label:hover ~ label,
+.rating8 > label:hover ~ input:checked ~ label{
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating1 > label:active,.rating2 > label:active,.rating3 > label:active,.rating4 > label:active,.rating5 > label:active,.rating6 > label:active,.rating7 > label:active,.rating8 > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+        
+        
+        
+        
+        
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+<body>
+        
+            <nav class="navbar navbar-expand-md navbar-light bg-white sticky-top" >
+            <div class="container-fluid">
+                <a class="navbar-brand" href="home.html"><img src="img/logo.png" width="160px" height="110px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                
+                
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="" href="home.html" style="font-size: 16px;"><h5>Home </h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>Link</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>About us</h5></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="#" style="font-size: 16px;"><h5>Contact us</h5></a>
+                    </li>
+
+                    <li>
+                        <a href="login.html"  class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--light-blue-600 mdl-color-text--white" data-upgraded=",MaterialButton,MaterialRipple">LOGIN<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(760px, 14px);"></span></span></a>
+                        <a href="signup.html"  style="margin-left: 10px" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color--amber-500 mdl-color-text--grey-900" data-upgraded=",MaterialButton,MaterialRipple">SIGN UP<span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 207.056px; height: 207.056px; transform: translate(-50%, -50%) translate(77px, 14px);"></span></span></a>
+
+                    </li>
+                
+                
+                
+                    </ul>
+                </div>
+        
+        
+        
+        
+        
+            </div>
+        </nav>
+        
+    <div class="header">
+        <center><img src="img/IIT-MAdras.jpg" class="h-img" width="1400px" height="450px"></center>
+        <h1><br/>&nbsp; &nbsp;IIT Madras - Indian Institute of Technology Chennai (IITM)</h1>
+        <p style="font-size: 20px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public/Government | Established 1959<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autonomous Institute <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Chennai<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i></p>
+        <h3>&nbsp;&nbsp;&nbsp;Courses and Fees</h3>
+    </div>
+    
+    <div class="container">
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"> << Prev</i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                    <i class="fas fa-chevron-right">next >> </i>
+                </a>
+            </div>
+            <!--/.Controls-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+                <!--First slide-->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">Master of Business Administration</h4>
+                                    <p class="card-text">
+                                        Rating : 4.5 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 6.89 Lakh<br/>Duration : 2 years | Full Time<br/>Exams: CAT, IITM WAT<br/>
+    Offered by DoMS IIT Madras - Department of Management Studies
+                                    </p>
+                                    <a class="btn btn-primary" style="color: #fff;">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Computer Science and Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+    Offered by IIT Madras - Department of Computer Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Mechanical Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-half-o" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+Offered by IIT Madras - Department of Mechanical Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.First slide-->
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Electrical Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.9 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+Offered by DoMS IIT Madras - Department of Electrical Studies
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Chemical Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.7 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+
+Offered by IIT Madras - Department of Chemical Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Civil Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+
+Offered by IIT Madras - Department of Civil Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Second slide-->
+                <!--Third slide-->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Engineering Physics</h4>
+                                    <p class="card-text">
+                                        Rating : 5.0 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+
+Offered by IIT Madras - Department of Physics
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">M.Tech. in Aerospace Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.6 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 36,444<br/>Duration : 2 years | Full Time<br/>Exams: GATE, IITM Suitability Test<br/>
+
+Offered by IIT Madras - Department of Aerospace Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                
+                                <div class="card-body">
+                                    <h4 class="card-title">B.Tech. in Aerospace Engineering</h4>
+                                    <p class="card-text">
+                                        Rating : 4.0 &nbsp;<i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star" aria-hidden="true" style="color: #e5bc36"></i><i class="fa fa-star-o" aria-hidden="true" style="color: #e5bc36"></i><br/> Fees : ₹ 8.82 Lakh<br/>Duration : 4 years | Full Time<br/>Exams: JEE Advanced<br/>
+    Offered by IIT Madras - Department of Aerospace Engineering
+                                    </p>
+                                    <a class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Third slide-->
+
+            </div>
+            <!--/.Slides-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+    
+    
+    
+    
+    
+        
+    
+    
+    <h2>&nbsp;&nbsp;&nbsp;Infrastructure/Facilities<br/></h2>
+    <div class="container">
+        
+    
+  
+  <div class="row" style="margin-bottom: 20px;">
+      
+    <div class="col-md-3">
+        <h4> Central Library</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-library.jpg" target="_blank">
+          <img src="img/iit-madras-library.jpg" alt="Lights" style="width:100%; height: 100%">
+          
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+        <h4>Library</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-library2.jpg" target="_blank">
+          <img src="img/iit-madras-library2.jpg" alt="Nature" style="width:100%; height: 100%;">
+          
+        </a>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <h4>Auditorium</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-auditorium.jpg" target="_blank">
+          <img src="img/iit-madras-auditorium.jpg" alt="Lights" style="width:100%; height: 100%">
+          
+        </a>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <h4>Administration</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-admin.png" target="_blank">
+          <img src="img/iit-madras-admin.png" alt="Nature" style="width:100%; height: 100%;">
+          
+        </a>
+      </div>
+    </div>
+    
+  </div>
+        
+        <div class="row" style="margin-bottom: 20px;">
+      
+    <div class="col-md-3">
+        <h4>Cafeteria / Mess</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-mess.jpg" target="_blank">
+          <img src="img/iit-madras-mess.jpg" alt="Lights" style="width:100%; height: 100%">
+          
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+        <h4>Campus Building</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-campus.jpg" target="_blank">
+          <img src="img/iit-madras-campus.jpg" alt="Nature" style="width:100%; height: 100%;">
+          
+        </a>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <h4>Open Air Theatre</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-theater.png" target="_blank">
+          <img src="img/iit-madras-theater.png" alt="Lights" style="width:100%; height: 100%">
+          
+        </a>
+      </div>
+    </div>
+      <div class="col-md-3">
+        <h4>Classroom</h4>
+      <div class="thumbnail">
+        <a href="img/iit-madras-classroom.jpg" target="_blank">
+          <img src="img/iit-madras-classroom.jpg" alt="Nature" style="width:100%; height: 100%;">
+          
+        </a>
+      </div>
+    </div>
+    
+  </div>
+        
+        
+</div>
+    
+    
+<div class="container-fluid" style="padding: 30px;">    
+    
+    <h2>Rate your College</h2>
+
+<h4>Overall Rating</h4>
+
+<div class="rating">
+  
+    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+</div>
+<br>
+<br>
+<br>
+
+<table>
+
+<tr>
+    <td><h5>College Infrastructure</h5></td>
+<td><div class="rating1">
+  
+    <input type="radio" id="star51" name="rating1" value="5" /><label for="star51" title="Rocks!">5 stars</label>
+    <input type="radio" id="star41" name="rating1" value="4" /><label for="star41" title="Pretty good">4 stars</label>
+    <input type="radio" id="star31" name="rating1" value="3" /><label for="star31" title="Meh">3 stars</label>
+    <input type="radio" id="star21" name="rating1" value="2" /><label for="star21" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star11" name="rating1" value="1" /><label for="star11" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>Faculty</h5></td>
+<td><div class="rating2">
+  
+    <input type="radio" id="star52" name="rating2" value="5" /><label for="star52" title="Rocks!">5 stars</label>
+    <input type="radio" id="star42" name="rating2" value="4" /><label for="star42" title="Pretty good">4 stars</label>
+    <input type="radio" id="star32" name="rating2" value="3" /><label for="star32" title="Meh">3 stars</label>
+    <input type="radio" id="star22" name="rating2" value="2" /><label for="star22" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star12" name="rating2" value="1" /><label for="star12" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>College Placement</h5></td>
+<td>
+<div  class="rating3">
+  
+    <input type="radio" id="star53" name="rating3" value="5" /><label for="star53" title="Rocks!">5 stars</label>
+    <input type="radio" id="star43" name="rating3" value="4" /><label for="star43" title="Pretty good">4 stars</label>
+    <input type="radio" id="star33" name="rating3" value="3" /><label for="star33" title="Meh">3 stars</label>
+    <input type="radio" id="star23" name="rating3" value="2" /><label for="star23" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star13" name="rating3" value="1" /><label for="star13" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>Industry Exposure</h5></td>
+<td>
+<div class="rating4">
+  
+    <input type="radio" id="star54" name="rating4" value="5" /><label for="star54" title="Rocks!">5 stars</label>
+    <input type="radio" id="star44" name="rating4" value="4" /><label for="star44" title="Pretty good">4 stars</label>
+    <input type="radio" id="star34" name="rating4" value="3" /><label for="star34" title="Meh">3 stars</label>
+    <input type="radio" id="star24" name="rating4" value="2" /><label for="star24" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star14" name="rating4" value="1" /><label for="star14" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>Student Crowd</h5></td>
+<td>
+<div class="rating5">
+  
+    <input type="radio" id="star55" name="rating5" value="5" /><label for="star55" title="Rocks!">5 stars</label>
+    <input type="radio" id="star45" name="rating5" value="4" /><label for="star45" title="Pretty good">4 stars</label>
+    <input type="radio" id="star35" name="rating5" value="3" /><label for="star35" title="Meh">3 stars</label>
+    <input type="radio" id="star25" name="rating5" value="2" /><label for="star25" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star15" name="rating5" value="1" /><label for="star15" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>College Life</h5></td>
+<td>
+<div class="rating6">
+  
+    <input type="radio" id="star56" name="rating6" value="5" /><label for="star56" title="Rocks!">5 stars</label>
+    <input type="radio" id="star46" name="rating6" value="4" /><label for="star46" title="Pretty good">4 stars</label>
+    <input type="radio" id="star36" name="rating6" value="3" /><label for="star36" title="Meh">3 stars</label>
+    <input type="radio" id="star26" name="rating6" value="2" /><label for="star26" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star16" name="rating6" value="1" /><label for="star16" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>Hostel</h5></td>
+<td>
+<div class="rating7">
+  
+    <input type="radio" id="star57" name="rating7" value="5" /><label for="star57" title="Rocks!">5 stars</label>
+    <input type="radio" id="star47" name="rating7" value="4" /><label for="star47" title="Pretty good">4 stars</label>
+    <input type="radio" id="star37" name="rating7" value="3" /><label for="star37" title="Meh">3 stars</label>
+    <input type="radio" id="star27" name="rating7" value="2" /><label for="star27" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star17" name="rating7" value="1" /><label for="star17" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+<tr>
+    <td><h5>Affordability</h5></td>
+<td>
+<div class="rating8">
+  
+    <input type="radio" id="star58" name="rating8" value="5" /><label for="star58" title="Rocks!">5 stars</label>
+    <input type="radio" id="star48" name="rating8" value="4" /><label for="star48" title="Pretty good">4 stars</label>
+    <input type="radio" id="star38" name="rating8" value="3" /><label for="star38" title="Meh">3 stars</label>
+    <input type="radio" id="star28" name="rating8" value="2" /><label for="star28" title="Kinda bad">2 stars</label>
+    <input type="radio" id="star18" name="rating8" value="1" /><label for="star18" title="Sucks big time">1 star</label>
+</div></td>
+</tr>
+</table>
+<h6>Would you recommend this college ? &nbsp;&nbsp;
+<input type="radio" name="rt" value="YES">&nbsp;YES&nbsp;
+<input type="radio" name="rt" value="NO">&nbsp;NO&nbsp;</h6>
+
+<p><textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter review here..."></textarea></p>
+<p><input type="submit" class="sub"></p>
+    </div>    
+
+    
+    
+    
+    
+    
+    
+    
+
+        <div class="container-fluid" id="r1">
+            <div class="r2">
+                <h3 style="text-align: center;"><i class="fa fa-facebook" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-twitter" aria-hidden="true" style="color: #fff">        </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-instagram" aria-hidden="true" style="color: #fff"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <i class="fa fa-google-plus" aria-hidden="true" style="color: #fff"></i>
+                    </h3><br>
+             
+             
+        
+            </div>
+        
+         <div class="row" >
+             
+             
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="region region-panel-second-1">
+        <div id="block-contactinfo" class="block block-block-content block-block-contente29440d8-09bd-4afe-8080-1f9cc71afa89">
+        <h3 style="text-align: center;">Contact Info</h3><br>
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item" style="text-align: center;"><h5>Email ID</h5><h6>
+        &nbsp;mandarkumbhar65@gmail.com<br>
+        &nbsp;rutviklat@gmail.com<br>
+        &nbsp;tgkhanted@gmail.com<br></h6>
+                <h5>Mobile No</h5><h6>
+        &nbsp;9930641900/
+        9967293194/
+        9167124511<br></h6><br>
+    
+        </div>
+        </div>
+        </div>
+         </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Links</h3><br>
+            <div style="text-align: center;">
+                <h5>College review</h5>
+                <h5>Top University</h5>
+                <h5>Top Engineering colleges</h5>
+                <h5>Top MBA colleges</h5>
+                
+                <h5>Help</h5><br>
+            
+            
+            
+            </div>
+            
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <h3 style="text-align: center;">Contact us</h3><br>
+            <div class="form-box" style="text-align: center;">
+                <p>Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name" style="height: 25px; width: 200px;"></p>
+                <p>Email ID : &nbsp;&nbsp;&nbsp;<input type="text" name="email" style="height: 25px; width: 200px;"></p>
+                <div class="row" style="text-align: center; align-content: center; margin-left: 100px;">
+                <p>Comment :&nbsp;</p>
+                
+                <p><textarea name="message" rows="3" cols="25"> 
+                    </textarea></p>
+                </div>    
+                
+                <button class="submit" ><bold>Send</bold></button>
+            
+            
+            </div>
+        </div>
+        
+        </div>
+            <div class="copyright" style="text-align: center;">
+            
+                <h6>&#169;2019College360.All Rights Reserved</h6>
+            
+            </div>
+            
+            
+        </div>
+    
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
